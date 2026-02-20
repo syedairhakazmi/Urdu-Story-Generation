@@ -121,13 +121,16 @@ def health ():
     )
 
 if __name__ == "__main__":
+    port = int (os.environ.get ("PORT", 8000))
+
     print ()
-    print (" FastAPI running at http://127.0.0.1:8001/docs")
+    print (f" FastAPI running on port {port}")
     print ()
+
     uvicorn.run (
-        "phase4_microservice:app", 
-        host = "127.0.0.1",
-        port = 8001,
+        "phase4_microservice:app",
+        host = "0.0.0.0",
+        port = port,
         reload = False,
         log_level = "info"
     )
