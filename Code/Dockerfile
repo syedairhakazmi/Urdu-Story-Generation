@@ -50,4 +50,4 @@ ENV MODEL_PATH="./trigram_model.json" \
 
 # Start the server (uvicorn is the entrypoint; CMD can be overridden)
 ENTRYPOINT ["uvicorn", "phase4_microservice:app"]
-CMD ["--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+CMD ["--host", "0.0.0.0", "--port", "${PORT}", "--workers", "1"]
