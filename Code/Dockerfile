@@ -49,5 +49,5 @@ ENV MODEL_PATH="./trigram_model.json" \
     PYTHONUNBUFFERED=1
 
 # Start the server (uvicorn is the entrypoint; CMD can be overridden)
-ENTRYPOINT ["uvicorn", "phase4_microservice:app"]
+ENTRYPOINT ["python", "-m", "uvicorn", "phase4_microservice:app"]
 CMD ["--host", "0.0.0.0", "--port", "${PORT}", "--workers", "1"]
